@@ -1,0 +1,38 @@
+<div class="bg-blue-900 px-16 py-12 rounded-2xl">
+  <!-- Today time -->
+  <div class="row bg-blue-600 bg-opacity-75 rounded-2xl w-[500px] px-8">
+    <div class="col-12 rounded-xxl">
+      <!-- Day and Date -->
+      <div class="d-flex justify-content-between align-items-center mt-3 mb-10">
+        <span class="fs-4 text-white">Today</span>
+        <span class="fs-6 text-slate-400">Sat. 3 Aug</span>
+      </div>
+      <!-- Temperature and weather icon -->
+      <div class="d-flex justify-content-between align-items-center">
+        <span class="text-5xl text-white">30*C</span>
+        <span
+          class="iconify text-white text-8xl"
+          data-icon="arcticons:oneplus-weather"
+        ></span>
+      </div>
+      <!-- Location icon and location text -->
+      <div class="d-flex flex-row align-items-center mt-12 mb-6">
+        <span
+          class="iconify text-3xl text-blue-300 me-3"
+          data-icon="akar-icons:location"
+        ></span>
+        <span class="text-slate-400">Allientown, New Mexico 31134</span>
+      </div>
+    </div>
+  </div>
+  <!-- Today / Tomorrow / next 7 days -->
+  <div class="row my-4">
+    <div class="col-10 d-flex justify-content-between text-white">
+      <span class="text-yellow-500 text-lg">Today</span>
+      <span class="text-lg">Tomorrow</span>
+      <span class="text-lg">Next 7 days</span>
+    </div>
+  </div>
+
+  <app-weather-card></app-weather-card>
+</div>
