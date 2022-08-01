@@ -23,7 +23,9 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/assets/weather-theme.scss",
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/swiper/swiper.scss"
+              
             ],
             "scripts": [],
             "vendorChunk": true,
@@ -31,7 +33,8 @@
             "buildOptimizer": false,
             "sourceMap": true,
             "optimization": false,
-            "namedChunks": true
+            "namedChunks": true,
+            "aot": true
           },
           "configurations": {
             "production": {

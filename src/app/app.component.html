@@ -1,12 +1,15 @@
 <main class="container h-100">
-  <div
-    class="d-flex flex-column justify-content-center align-items-center h-100"
-  >
-    <mat-form-field appearance="outline" class="">
+  <div class="d-flex flex-column justify-content-center align-items-center">
+    <mat-form-field appearance="outline" class="mt-7">
       <mat-label>Enter a city</mat-label>
-      <input type="text" matInput />
+      <input [formControl]="searchBar" type="text" matInput />
     </mat-form-field>
-    <button class="d-block mat-accent-btn" mat-button routerLink="/place">
+    <button
+      class="d-block mat-accent-btn"
+      mat-button
+      [routerLink]="['/place']"
+      [queryParams]="{ q: searchBar.value }"
+    >
       Search
     </button>
     <router-outlet></router-outlet>

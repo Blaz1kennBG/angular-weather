@@ -68,7 +68,9 @@
     "@ng-web-apis/common": "^2.0.0",
     "@ng-web-apis/geolocation": "^1.0.4",
     "@ngneat/transloco": "^4.0.0",
+    "cities.json": "^1.1.12",
     "rxjs": "^7.5.5",
+    "swiper": "^8.3.2",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
   },
