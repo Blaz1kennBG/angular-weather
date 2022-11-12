@@ -1,0 +1,23 @@
+<div class="my-3" *ngIf="weather$ | async as weatherList">
+  <mat-accordion class="">
+    <mat-expansion-panel *ngFor="let weather of weatherList.list">
+      <mat-expansion-panel-header class="h-auto">
+        <div class="grid grid-cols-12 w-full">
+          <div class="col-span-2 my-auto">
+            {{ weather.dt_txt | date: "shortDate" }}
+          </div>
+          <div class="col-span-5 my-auto">
+            <span class="text-[60px]">{{ weather.main.temp.toFixed(0) }}°</span>
+          </div>
+          <div class="col-span-5 my-auto">
+            {{ weather.weather[0].description }}
+          </div>
+        </div>
+      </mat-expansion-panel-header>
+      <div class="grid grid-cols-2">
+        <div>Time</div>
+        <div></div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

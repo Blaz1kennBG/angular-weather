@@ -1,12 +1,26 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
-import { OverviewRoutingModule } from './overview-routing.module';
-import { OverviewComponent } from './overview.component';
-import { ComponentsModule } from 'src/app/components/components.module';
+import { OverviewRoutingModule } from "./overview-routing.module";
+import { OverviewComponent } from "./overview.component";
+import { ComponentsModule } from "src/app/components/components.module";
+import { NowComponent } from "../now/now.component";
+import { TodayComponent } from "../today/today.component";
+import { FiveDaysComponent } from "../five-days/five-days.component";
+import { MatExpansionModule } from "@angular/material/expansion";
 
 @NgModule({
-  declarations: [OverviewComponent],
-  imports: [CommonModule, OverviewRoutingModule, ComponentsModule],
+  declarations: [
+    OverviewComponent,
+    NowComponent,
+    TodayComponent,
+    FiveDaysComponent,
+  ],
+  imports: [
+    CommonModule,
+    OverviewRoutingModule,
+    ComponentsModule,
+    MatExpansionModule,
+  ],
 })
 export class OverviewModule {}

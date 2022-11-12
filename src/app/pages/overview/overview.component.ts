@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Params } from "@angular/router";
 import { WeatherService } from "src/app/weather.service";
 import cities from "cities.json";
-import { map, Observable, switchMap, tap } from "rxjs";
+import { map, Observable, switchMap, tap, filter } from "rxjs";
 import { Weather } from "src/app/_interfaces/weather.interface";
 export interface City {
   country: string;
@@ -27,11 +27,12 @@ export class OverviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectedPlace$ = this.route.queryParams.pipe(
-      map((params: Params) => {
+      map(({ city }) => {
         return this.cityList.find((option) =>
-          option.name.toLocaleLowerCase().includes(params.q.toLocaleLowerCase())
+          option.name.toLocaleLowerCase().includes(city.toLocaleLowerCase())
         );
       }),
+      filter((city) => !!city),
       switchMap((city) => this.weatherService.getWeatherOfPlace(city)),
       tap((res) => console.log("CITY RES >>> ", res))
     );

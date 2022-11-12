@@ -1,17 +1,23 @@
-<main class="container h-100">
-  <div class="d-flex flex-column justify-content-center align-items-center">
-    <mat-form-field appearance="outline" class="mt-7">
-      <mat-label>Enter a city</mat-label>
-      <input [formControl]="searchBar" type="text" matInput />
-    </mat-form-field>
-    <button
-      class="d-block mat-accent-btn"
-      mat-button
-      [routerLink]="['/place']"
-      [queryParams]="{ q: searchBar.value }"
-    >
-      Search
-    </button>
+<header class="bg-slate-900 py-2 px-4 flex justify-between">
+  <a [routerLink]="['/']" class="text-xl text-white">Angular Weather</a>
+  <form
+    (ngSubmit)="onSubmit()"
+    class="bg-white flex items-center rounded-2xl pl-1 pr-4"
+    [formGroup]="form"
+  >
+    <span class="iconify text-3xl" data-icon="arcticons:xiaoyuan-search"></span>
+    <input
+      formControlName="searchBar"
+      type="text"
+      class="py-1 pl-1 pr-2 outline-none"
+      placeholder="Location"
+    />
+  </form>
+
+  <span class="text-xl text-orange-400">by: Blaz1kenn</span>
+</header>
+<main class="bg-slate-200" style="height: calc(100% - 48px)">
+  <div class="max-w-[960px] mx-auto d-flex flex-column">
     <router-outlet></router-outlet>
   </div>
 </main>
