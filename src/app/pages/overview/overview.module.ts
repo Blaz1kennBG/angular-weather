@@ -8,6 +8,7 @@ import { NowComponent } from "../now/now.component";
 import { TodayComponent } from "../today/today.component";
 import { FiveDaysComponent } from "../five-days/five-days.component";
 import { MatExpansionModule } from "@angular/material/expansion";
+import { MatTooltipModule } from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { MatExpansionModule } from "@angular/material/expansion";
     OverviewRoutingModule,
     ComponentsModule,
     MatExpansionModule,
+    MatTooltipModule,
   ],
 })
 export class OverviewModule {}

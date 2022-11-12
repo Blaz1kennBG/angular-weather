@@ -1,22 +1,63 @@
-<div class="my-3" *ngIf="weather$ | async as weatherList">
-  <mat-accordion class="">
-    <mat-expansion-panel *ngFor="let weather of weatherList.list">
+<div class="my-3" *ngIf="{ weather: weather$ | async } as data">
+  <mat-accordion multi="true">
+    <mat-expansion-panel
+      *ngFor="let weather of data.weather.list"
+      [expanded]="true"
+    >
       <mat-expansion-panel-header class="h-auto">
         <div class="grid grid-cols-12 w-full">
-          <div class="col-span-2 my-auto">
-            {{ weather.dt_txt | date: "shortDate" }}
-          </div>
-          <div class="col-span-5 my-auto">
+          <div class="col-span-5 my-auto flex">
+            <img
+              class="h-[50px] w-[50px] mt-3"
+              [src]="iconurl + weather.weather[0].icon + '.png'"
+            />
             <span class="text-[60px]">{{ weather.main.temp.toFixed(0) }}°</span>
           </div>
-          <div class="col-span-5 my-auto">
+          <div class="col-span-5 my-auto text-3xl capitalize">
             {{ weather.weather[0].description }}
+          </div>
+          <div class="col-span-12 ml-5 text-lg my-2">
+            {{ weather.dt_txt | date: "shortDate" }}
           </div>
         </div>
       </mat-expansion-panel-header>
-      <div class="grid grid-cols-2">
-        <div>Time</div>
-        <div></div>
+      <div class="grid grid-cols-2 gap-x-5 gap-y-4">
+        <div
+          class="flex justify-between border-b border-slate-500 text-lg pb-2"
+        >
+          <span>Time</span>
+          <span>{{ weather.dt_txt | date: "shortTime" }}</span>
+        </div>
+        <div
+          class="flex justify-between border-b border-slate-500 text-lg pb-2"
+        >
+          <span>Feels like</span>
+          <span>{{ weather.main.feels_like }} °C</span>
+        </div>
+        <div
+          class="flex justify-between border-b border-slate-500 text-lg pb-2"
+        >
+          <span>Humidity</span>
+          <span>{{ weather.main.humidity }}%</span>
+        </div>
+        <div
+          class="flex justify-between border-b border-slate-500 text-lg pb-2"
+        >
+          <span>Wind speed</span>
+          <span>{{ weather.wind.speed }} km/h</span>
+        </div>
+        <div
+          class="flex justify-between border-b border-slate-500 text-lg pb-2"
+        >
+          <span>Wind gust</span>
+          <span>{{ weather.wind.gust }}</span>
+        </div>
+        <div
+          class="flex justify-between border-b border-slate-500 text-lg pb-2"
+        >
+          <span>Wind angle</span>
+          <span>{{ weather.wind.deg }}°</span>
+        </div>
       </div>
     </mat-expansion-panel>
   </mat-accordion>

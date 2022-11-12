@@ -1,4 +1,4 @@
-<div class="overview-container" *ngIf="selectedPlace$ | async as data">
+<div class="overview-container" *ngIf="weatherAndAirPollution$ | async">
   <nav class="grid grid-cols-12 text-2xl bg-transparent">
     <button
       routerLinkActive="!border-b-blue-400"

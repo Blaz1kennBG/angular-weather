@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
 import { map, Observable, startWith } from "rxjs";
-import { WeatherService } from "./weather.service";
+import { WeatherService } from "./_services/weather.service";
 import cities from "cities.json";
 import { City } from "./pages/overview/overview.component";
 import { ActivatedRoute, Router } from "@angular/router";

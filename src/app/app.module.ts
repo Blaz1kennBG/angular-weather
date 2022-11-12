@@ -18,11 +18,6 @@ import { MatInputModule } from "@angular/material/input";
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    /*    TranslocoRootModule,
-    AngularMaterialModule,
-    ComponentsModule,
-    MatAutocompleteModule,
-    MatInputModule, */
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,

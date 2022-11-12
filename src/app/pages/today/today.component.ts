@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { map } from "rxjs";
-import { WeatherService } from "src/app/weather.service";
+import { WeatherService } from "src/app/_services/weather.service";
 
 @Component({
   selector: "app-today",
@@ -8,6 +8,7 @@ import { WeatherService } from "src/app/weather.service";
   styleUrls: ["./today.component.css"],
 })
 export class TodayComponent implements OnInit {
+  iconurl = "http://openweathermap.org/img/w/";
   weather$ = this.weatherService.weather$.pipe(
     map((w) => {
       const today = new Date();
@@ -19,6 +20,7 @@ export class TodayComponent implements OnInit {
       };
     })
   );
+
   constructor(private weatherService: WeatherService) {}
 
   ngOnInit(): void {}
